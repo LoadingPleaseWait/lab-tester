@@ -3,11 +3,20 @@ Test students' computer science assignments
 
 ### Usage
 To test a student's assignment use a command like:
+
 `./tester.sh -u student_name sample-output-directory assignment-file`
+
+or
+
+`./tester.sh --all student_name sample-output-directory assignment-file`
 
 The assignment file will need to be written in python3 and be put in the
 `/home/student_name/` directory. The sample input and output will need to be put
 files called output.txt and input.txt.
+
+### Installation
+Download the latest version on the [releases page](https://github.com/LoadingPleaseWait/lab-tester/releases).
+Extract the archive anywhere.
 
 ### License
 This program is licensed under the [GPL v3](http://www.gnu.org/licenses).
