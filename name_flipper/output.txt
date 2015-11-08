@@ -1,0 +1,6 @@
+comp, aplus
+aplus, comp
+sam, ben
+sue, sally
+man, big
+head, fat

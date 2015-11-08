@@ -2,15 +2,20 @@
 
 # first parameter should be username second should be key-directory third is assignment-file
 function test {
-  python3 /home/$1/$3 < $2/input.txt # actually run the program
-
-  # compare output to sample output
-  output=$(python3 /home/$1/$3 < $2/input.txt)
-  answer=$(cat $2/output.txt)
-  if [[ "$output" == "$answer" ]]; then
-    echo "Output matches"
+  if [[ -d $2/test.sh ]]; then
+    # run custom test
+    echo $(./test.sh $1)
   else
-    echo "Output does not match"
+    python3 /home/$1/$3 < $2/input.txt # actually run the program
+
+    # compare output to sample output
+    output=$(python3 /home/$1/$3 < $2/input.txt)
+    answer=$(cat $2/output.txt)
+    if [[ "$output" == "$answer" ]]; then
+      echo "Output matches"
+    else
+      echo "Output does not match"
+    fi
   fi
 }
 
@@ -23,7 +28,7 @@ else
   for user in "/home/*"
   do
     username=$(echo $user)
-    username=${username/"/home/"/}
+    username=${username/"/home/"/} # just the username not the full path
     echo $username
     test $username $2 $3
   done
