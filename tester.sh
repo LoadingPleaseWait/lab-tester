@@ -2,9 +2,9 @@
 
 # first parameter should be username second should be key-directory third is assignment-file
 function test {
-  if [[ -d $2/test.sh ]]; then
+  if [[ -f $2/test.sh ]]; then
     # run custom test
-    echo $(./test.sh $1)
+    echo $(bash $2/test.sh $1)
   else
     python3 /home/$1/$3 < $2/input.txt # actually run the program
 
