@@ -4,7 +4,7 @@
 function test {
   if [[ -f $2/test.sh ]]; then
     # run custom test
-    echo $(bash $2/test.sh $1)
+    bash $2/test.sh $1
   else
     python3 /home/$1/$3 < $2/input.txt # actually run the program
 
@@ -25,11 +25,11 @@ elif [[ $1 = "--user"  || $1 = "-u" ]]; then
   test $2 $3 $4
 else
   # loop through home directory and test assignment-file for all users
-  for user in "/home/*"
-  do
-    username=$(echo $user)
+  for user in "/home/*"; do
+    username=$(echo $user) # convert to string
     username=${username/"/home/"/} # just the username not the full path
     echo $username
     test $username $2 $3
+    echo -e "\n\n"
   done
 fi
