@@ -25,7 +25,7 @@ elif [[ $1 = "--user"  || $1 = "-u" ]]; then
   test $2 $3 $4
 else
   # loop through home directory and test assignment-file for all users
-  for user in "/home/*"; do
+  for user in /home/*; do
     username=$(echo $user) # convert to string
     username=${username/"/home/"/} # just the username not the full path
     echo $username
