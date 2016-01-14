@@ -1,5 +1,5 @@
 # lab-tester
-Test students' computer science assignments
+Test students' computer science assignments [![Build Status](https://travis-ci.org/LoadingPleaseWait/lab-tester.svg?branch=master)](https://travis-ci.org/LoadingPleaseWait/lab-tester)
 
 ### Usage
 To test a student's assignment use a command like:
