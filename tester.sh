@@ -2,7 +2,7 @@
 
 # first parameter should be username second should be key-directory third is assignment-file
 function test {
-  if [[ -f $2/test.sh ]]; then
+  if [[ "$3" == "" ]]; then
     # run custom test
     bash $2/test.sh $1
   else
