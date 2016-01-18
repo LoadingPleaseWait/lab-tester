@@ -1,18 +1,15 @@
-# lab-tester
-Test students' computer science assignments [![Build Status](https://travis-ci.org/LoadingPleaseWait/lab-tester.svg?branch=master)](https://travis-ci.org/LoadingPleaseWait/lab-tester)
+# lab-tester [![Build Status](https://travis-ci.org/LoadingPleaseWait/lab-tester.svg?branch=master)](https://travis-ci.org/LoadingPleaseWait/lab-tester)
+Test students' computer science assignments
 
 ### Usage
 To test a student's assignment use a command like:
 
-`./tester.sh -u student_name sample-output-directory assignment-file`
-
-or
-
-`./tester.sh --all student_name sample-output-directory assignment-file`
+`./tester.sh -u student_name key-directory assignment-file`
 
 The assignment file will need to be written in python3 and be put in the
 `/home/student_name/` directory. The sample input and output will need to be put
-files called output.txt and input.txt.
+files called output.txt and input.txt.  
+More information is available on the [project's wiki](https://github.com/LoadingPleaseWait/lab-tester/wiki/Usage).
 
 ### Installation
 Download the latest version on the [releases page](https://github.com/LoadingPleaseWait/lab-tester/releases).

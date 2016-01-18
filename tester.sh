@@ -20,7 +20,17 @@ function test {
 }
 
 if [[ $1 = "--help" || $1 = "-h" ]]; then
-  echo "Usage: ./tester.sh [option] key-directory assignment-file"
+  echo "Usage: ./tester.sh [option] key-directory [assignment-file]"
+  echo
+  echo "Options:"
+  echo "-a, --all  test the lab for all users"
+  echo "-u, --user USERNAME test the lab for one user"
+  echo
+  echo "Examples:"
+  echo "./tester.sh -a sum_digits"
+  echo "./tester.sh -u michael sum_digits"
+  echo "./tester.sh -a fract_to_dec fract_to_dec.py"
+  echo "./tester.sh -u michael fract_to_dec fract_to_dec.py"
 elif [[ $1 = "--user"  || $1 = "-u" ]]; then
   test $2 $3 $4
 else
